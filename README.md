@@ -45,6 +45,15 @@ internal links or missing images** across all 27 pages as of this build.
 
 ## Deployment
 
+### Test deployment — GitHub Pages
+
+Every push to `main` builds and deploys the site via `.github/workflows/deploy-pages.yml` to
+`https://<user>.github.io/<repo>/`. Because that is a subpath, the workflow runs
+`scripts/pages-base.mjs` after the build to prefix internal links with `/<repo>/` (the source and
+production build are unchanged). One-time setup: **Settings → Pages → Build and deployment →
+Source: GitHub Actions**. Note: GitHub Pages is static-only, so the quote form's `/api/quote`
+backend and the `_redirects` 301s do not work there.
+
 ### Option A — Cloudflare Pages (recommended)
 
 1. Push this repo to GitHub/GitLab and connect it in the Cloudflare Pages dashboard, or deploy
