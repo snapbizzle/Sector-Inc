@@ -1,0 +1,44 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CtaBand from '../../../components/CtaBand.astro';
+---
+
+<Layout
+  title="Drilling"
+  description="Drilling, tapping, counterboring, countersinking, and boring on Sector Technology cutting machines — consolidate part production onto one gantry."
+>
+  <PageHero
+    eyebrow="Processes"
+    title="Drilling"
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'Processes' }, { label: 'Drilling' }]}
+    intro="Consolidate part production onto one machine, and produce large parts that most machining centers can't handle."
+  />
+
+  <section class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <p class="text-base leading-relaxed text-brand-steel-700">
+      Drilling on a cutting machine is an excellent way to condense part production onto one
+      machine. It reduces part handling because the customer can complete all processes on one
+      machine, and it allows production of very large parts that could not otherwise be processed
+      in most machining centers.
+    </p>
+    <p class="mt-6 text-base leading-relaxed text-brand-steel-700">
+      Sector Technology provides several differently sized spindles on several of our gantries,
+      giving customers the capability of drilling, tapping, counterboring, countersinking, and
+      boring directly on the machine. This process is available on both water tables and
+      down-draft tables, with different tool-cooling systems.
+    </p>
+
+    <h2 class="mt-10 text-xl font-bold text-brand-navy-950">Related</h2>
+    <ul class="mt-4 flex flex-wrap gap-3 text-sm">
+      <li><a href="/processes/plasma/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Plasma Cutting</a></li>
+      <li><a href="/processes/oxy-fuel/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Oxy-Fuel Cutting</a></li>
+      <li><a href="/machines/sti-800hd/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">STI-800HD drilling capacity</a></li>
+    </ul>
+  </section>
+
+  <CtaBand
+    title="Need drilling or tapping on your next gantry?"
+    body="Let us know your part size and spindle requirements and we'll spec the right machine."
+  />
+</Layout>

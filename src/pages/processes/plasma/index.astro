@@ -1,0 +1,43 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CtaBand from '../../../components/CtaBand.astro';
+---
+
+<Layout
+  title="Plasma Cutting"
+  description="Plasma cutting from Sector Technology — straight, linear bevel, and contour bevel cutting of carbon steel, aluminum, copper, and stainless steel, with Hypertherm, ITT Kaliburn, and Thermal Dynamics systems."
+>
+  <PageHero
+    eyebrow="Processes"
+    title="Plasma Cutting"
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'Processes' }, { label: 'Plasma' }]}
+    intro="High quality, high speed, low operating cost — on carbon steel, aluminum, copper, and stainless steel."
+  />
+
+  <section class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <p class="text-base leading-relaxed text-brand-steel-700">
+      Plasma cutting is the most innovative cutting process in the metal cutting industry. Plasma
+      delivers both high quality cutting and high speed cutting while maintaining a low operating
+      cost. Sector Technology machines cut carbon steel, aluminum, copper, and stainless steel, with
+      straight cutting, linear bevel cutting, and contour bevel cutting all available.
+    </p>
+    <p class="mt-6 text-base leading-relaxed text-brand-steel-700">
+      Plasma systems vary from air plasma to high-definition plasma to water-injected plasma. We
+      provide and support plasma systems from Hypertherm®, ITT Kaliburn®, and Thermal Dynamics®.
+    </p>
+
+    <h2 class="mt-10 text-xl font-bold text-brand-navy-950">Related</h2>
+    <ul class="mt-4 flex flex-wrap gap-3 text-sm">
+      <li><a href="/processes/oxy-fuel/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Oxy-Fuel Cutting</a></li>
+      <li><a href="/processes/drilling/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Drilling</a></li>
+      <li><a href="/products/plasma-systems/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Plasma Systems we provide</a></li>
+      <li><a href="/machines/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">See our machines</a></li>
+    </ul>
+  </section>
+
+  <CtaBand
+    title="Cutting carbon steel, aluminum, or stainless?"
+    body="Tell us your material and thickness and we'll recommend the right plasma system and machine."
+  />
+</Layout>

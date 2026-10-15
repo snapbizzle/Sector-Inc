@@ -1,0 +1,70 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  machine: CollectionEntry<'machines'>;
+}
+
+const { machine } = Astro.props;
+const { specs, capacitySectionLabel, capacityNotes, drillingCapacity } = machine.data;
+
+function fmtRange(range: [number, number], unit: string) {
+  return `${range[0]}${unit} – ${range[1]}${unit}`;
+}
+function fmtIn(value: number | null | undefined) {
+  return value == null ? null : `${value}"`;
+}
+function fmtIpm(value: number | null | undefined) {
+  return value == null ? null : `${value} IPM`;
+}
+
+const rows: { label: string; value: string | null }[] = [
+  { label: 'Cut width', value: fmtRange(specs.cutWidthFt, "'") },
+  { label: 'Cut length', value: fmtRange(specs.cutLengthFt, "'") },
+  { label: 'Contouring speed', value: fmtRange(specs.contouringSpeedIpm, ' IPM') },
+  { label: 'Traverse speed', value: fmtRange(specs.traverseSpeedIpm, ' IPM') },
+  { label: 'Lifter speed — plasma', value: fmtIpm(specs.lifterSpeedPlasmaIpm) },
+  { label: 'Lifter speed — oxy-fuel', value: fmtIpm(specs.lifterSpeedOxyFuelIpm) },
+  { label: 'Plasma capacity — mild steel', value: fmtIn(specs.plasmaMildSteelIn) },
+  { label: 'Plasma capacity — aluminum / stainless', value: fmtIn(specs.plasmaAluminumStainlessIn) },
+  { label: 'Oxy-fuel capacity', value: fmtIn(specs.oxyFuelIn) },
+];
+---
+
+<div class="overflow-hidden rounded-lg border border-brand-steel-200">
+  <table class="w-full text-left text-sm">
+    <caption class="sr-only">Cutting dimensions and machine speeds for {machine.data.name}</caption>
+    <tbody>
+      {rows.map((row, i) => (
+        <tr class:list={[i % 2 === 0 ? 'bg-white' : 'bg-brand-steel-100']}>
+          <th scope="row" class="w-1/2 px-4 py-3 font-medium text-brand-navy-950">{row.label}</th>
+          <td class="px-4 py-3 text-brand-steel-700">
+            {row.value ?? <span class="font-medium text-brand-amber-600">Data required</span>}
+          </td>
+        </tr>
+      ))}
+      <tr class:list={[rows.length % 2 === 0 ? 'bg-white' : 'bg-brand-steel-100']}>
+        <th scope="row" class="px-4 py-3 font-medium text-brand-navy-950">{capacitySectionLabel}</th>
+        <td class="px-4 py-3 text-brand-steel-700">
+          <ul class="space-y-0.5">
+            {capacityNotes.map((note) => (
+              <li>{note.label}: {note.value}</li>
+            ))}
+          </ul>
+        </td>
+      </tr>
+      {drillingCapacity && (
+        <tr class="bg-white">
+          <th scope="row" class="px-4 py-3 font-medium text-brand-navy-950">Drilling capacity</th>
+          <td class="px-4 py-3 text-brand-steel-700">
+            <ul class="space-y-0.5">
+              <li>Drilling: up to {drillingCapacity.drillingIn}" diameter</li>
+              <li>Counterboring: up to {drillingCapacity.counterboringIn}" diameter</li>
+              <li>Countersinking: up to {drillingCapacity.countersinkingIn}" diameter</li>
+            </ul>
+          </td>
+        </tr>
+      )}
+    </tbody>
+  </table>
+</div>

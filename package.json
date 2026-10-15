@@ -1,0 +1,24 @@
+{
+  "name": "sector-technology-website",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "serve": "node server/index.js",
+    "linkcheck": "node scripts/linkcheck.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.8",
+    "dotenv": "^18.0.7",
+    "express": "^4.21.2",
+    "resend": "^6.32.1",
+    "tailwindcss": "^4.3.3"
+  }
+}

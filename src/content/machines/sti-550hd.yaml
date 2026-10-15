@@ -1,0 +1,71 @@
+name: STI-550HD
+urlSlug: sti-550hd
+tier: Precision / High-Speed
+tagline: An ultra-precise, high-speed single-torch gantry for intricate profiles with tight tolerances.
+overview: >-
+  The STI-550HD is an ultra-precise, high-speed single-torch gantry. It's constructed of a dual
+  side-driven gantry with a heavy-duty aluminum beam riding on linear rails, built with Bosch
+  Rexroth high-quality precision components that let the machine run at very high acceleration
+  rates while still maintaining very high part tolerances. It's equipped with an advanced PC-based
+  CNC control that provides an excellent motion control system, built around the High Definition
+  Plasma Cutting process for ease of use, with fully automated process control for both oxy-fuel
+  and plasma cutting. This machine is ideal for a customer needing to cut intricate profiles with
+  tight tolerances close to laser quality, without the large investment of a laser.
+heroImage: /images/machines/sti-550hd.jpg
+heroImageAlt: Sector Technology STI-550HD single-torch precision CNC plasma cutting gantry on linear rails.
+
+specs:
+  cutWidthFt: [4, 13]
+  cutLengthFt: [6, 48]
+  contouringSpeedIpm: [1, 500]
+  traverseSpeedIpm: [1, 2000]
+  lifterSpeedPlasmaIpm: null
+  lifterSpeedOxyFuelIpm: null
+  plasmaMildSteelIn: 2
+  plasmaAluminumStainlessIn: 3
+  oxyFuelIn: null
+
+capacitySectionLabel: Process Capacity
+capacityNotes:
+  - label: Plasma
+    value: Up to 2 heads
+
+standardEquipment:
+  - Dual side-drive gantry, high-power 1650-watt Bosch Rexroth AC brushless drive
+  - Floor-mounted 30 lbs./ft. machined rails, adjustable leveling pads, dual drive, digital synchronization
+  - Hypertherm® EDGE Pro® numerical control
+  - 19-inch active matrix LCD touch screen, USB communication port
+  - Power track guide and heat shields to protect hoses and cables from wear and sparks
+  - Non-contact electronic proximity switches
+  - Rack & pinion drive with precision planetary gear box
+  - 18 homing positions and procedures to square gantry during setup
+  - Air-blast and wiper system to clean rails
+  - 2-inch stainless steel drive band for slave or mirror-image cutting
+  - Water table control at the operator console
+  - Three-part automotive paint finish
+
+optionalEquipment:
+  - True Hole technology
+  - 10, 15, or 20 hp drilling station integrated with PLC
+  - 12-station tool changer
+  - 5-axis Rotobevel contour beveling station
+  - X & Y axis plasma arc bevel station
+  - Triple-torch rotary oxy-fuel bevel station
+  - Laser pointer for plate alignment
+  - Hose reel with hand torch for hand cutting
+  - Plasma torch collision sensor
+  - Precision micrometer-scaled oxygen piercing valve for oxy-fuel systems
+  - Plasma, pneumatic, or paint marking
+  - Heavy-duty water or downdraft tables
+  - Floor-mounted or overhead power track
+  - Rider console with cushioned seat
+  - Tucked rail for forklift access
+  - Wireless networking for CNC controller
+  - Adjustable oxy-fuel torches to allow beveling
+  - Easy-clean water table or zoned downdraft
+  - Precision-machined linear profile rails
+  - Automated gas control console
+
+dataGaps:
+  - "The STI-550HD Specs page does not publish an oxy-fuel cutting capacity or a lifter speed (plasma or oxy-fuel), unlike every other model in the line. This is carried forward as a genuine gap rather than an estimated figure — please supply current values if the machine does offer oxy-fuel cutting."
+  - "At 1–2,000 IPM traverse, this is the fastest-published machine in the line, but a 2026 competitive review found at least one named competitor publishing 3,000 IPM in the same precision tier. Worth confirming this figure is current."

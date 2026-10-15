@@ -1,0 +1,72 @@
+# 301 redirects from the old (2012-era) site's URLs to the new site's
+# clean URLs. Supported natively by Cloudflare Pages and Netlify. If you
+# self-host with the included Caddy config instead, see the equivalent
+# `redir` block documented in README.md.
+#
+# Format: /old-path  /new-path  301
+
+/index.html                  /                               301
+/home.html                   /                               301
+
+# Machines
+/machines.html                /machines/                      301
+/photon.html                  /machines/photon/               301
+/photonfeatures.html          /machines/photon/               301
+/photonoptions.html           /machines/photon/               301
+/photonspecs.html              /machines/photon/              301
+/gamma.html                    /machines/gamma/               301
+/gammafeatures.html             /machines/gamma/              301
+/gammaoptions.html              /machines/gamma/              301
+/gammaspecs.html                /machines/gamma/              301
+/spectrum.html                   /machines/spectrum/          301
+/spectrumfeatures.html            /machines/spectrum/         301
+/spectrumoptions.html             /machines/spectrum/         301
+/spectrumspecs.html               /machines/spectrum/         301
+/550.html                          /machines/sti-550hd/        301
+/550features.html                   /machines/sti-550hd/       301
+/550options.html                     /machines/sti-550hd/      301
+/550specs.html                        /machines/sti-550hd/     301
+/200.html                              /machines/sti-200hd/    301
+/200features.html                       /machines/sti-200hd/   301
+/200options.html                         /machines/sti-200hd/  301
+/200specs.html                           /machines/sti-200hd/  301
+/100.html                                 /machines/sti-100hd/ 301
+/100features.html                          /machines/sti-100hd/ 301
+/100options.html                            /machines/sti-100hd/ 301
+/100specs.html                               /machines/sti-100hd/ 301
+/800.html                                     /machines/sti-800hd/ 301
+/800features.html                              /machines/sti-800hd/ 301
+/800options.html                                /machines/sti-800hd/ 301
+/800specs.html                                   /machines/sti-800hd/ 301
+
+# Products
+/products.html                /machines/                       301
+/controls.html                /products/controls/              301
+/plasmas.html                 /products/plasma-systems/        301
+
+# Processes
+/plasma.html                  /processes/plasma/                301
+/oxy.html                      /processes/oxy-fuel/             301
+/drilling.html                  /processes/drilling/            301
+
+# Services
+/retro.html                   /services/retrofits/              301
+/tech.html                     /services/technical-service/     301
+/train.html                     /services/training/             301
+/spare.html                      /services/spare-parts/         301
+/trade.html                       /services/trade-ins/          301
+/used.html                         /services/used-machinery/    301
+
+# Company / contact
+/about.html                   /about/                            301
+/partners.html                /partners/                         301
+/contact.html                 /contact/                           301
+/support.html                 /contact/                           301
+/quotes.html                  /quote/                             301
+
+# Removed in the rebuild — stale 2012 placeholders with no current
+# content to migrate (empty/placeholder Downloads, Video, and News
+# pages). Sent home rather than to a dead end.
+/downloads.php                /                                   301
+/video.html                   /                                   301
+/news.html                    /                                   301

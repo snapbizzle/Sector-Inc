@@ -1,0 +1,57 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import ContactStrip from '../../../components/ContactStrip.astro';
+import CtaBand from '../../../components/CtaBand.astro';
+---
+
+<Layout
+  title="Retrofits"
+  description="Sector Technology is the industry leader in machine retrofits, with over 30 years of experience — from electronics upgrades to complete frame rebuilds, in the field or at the factory."
+>
+  <PageHero
+    eyebrow="Services"
+    title="Retrofits"
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'Services' }, { label: 'Retrofits' }]}
+    intro="Sector's original business — updating machines to make them more productive and reliable on a realistic budget."
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <p class="text-base leading-relaxed text-brand-steel-700">
+          Sector Technology is the industry leader in retrofits, with a track record of performing
+          retrofits for over 30 years — in fact, Sector's initial business model started off by
+          doing retrofits. A retrofit is ideal for updating a machine to make it more productive
+          and reliable on a realistic budget. A machine can be updated relatively easily, resulting
+          in an increase in part quality and productivity along with a decrease in operating costs.
+        </p>
+        <p class="mt-6 text-base leading-relaxed text-brand-steel-700">
+          Retrofits can be performed in the field, or the machine can be returned to the factory
+          for a complete rebuild. They can range in complexity from upgrading electronics — such as
+          the CNC control and/or servo drives — to a complete rebuild of the frame, including
+          repainting.
+        </p>
+        <h2 class="mt-10 text-xl font-bold text-brand-navy-950">Related</h2>
+        <ul class="mt-4 flex flex-wrap gap-3 text-sm">
+          <li><a href="/products/controls/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Controls</a></li>
+          <li><a href="/products/plasma-systems/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Plasma Systems</a></li>
+          <li><a href="/services/technical-service/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Technical Service</a></li>
+        </ul>
+      </div>
+      <aside>
+        <div class="rounded-lg border border-brand-steel-200 bg-brand-steel-100 p-6">
+          <h2 class="text-sm font-semibold uppercase tracking-wide text-brand-steel-700">Get a retrofit quote</h2>
+          <div class="mt-3">
+            <ContactStrip email="support@sectortechnologyinc.com" label="Email" />
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Ready to retrofit your machine?"
+    body="Contact Sector for a quote on a retrofit — from an electronics upgrade to a complete frame rebuild."
+  />
+</Layout>

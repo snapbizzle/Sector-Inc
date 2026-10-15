@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const machines = await getCollection('machines');
+const order = ['photon', 'gamma', 'spectrum', 'sti-550hd', 'sti-200hd', 'sti-100hd', 'sti-800hd'];
+const sorted = machines.sort((a, b) => order.indexOf(a.data.urlSlug) - order.indexOf(b.data.urlSlug));
+
+function fmtRange(range: [number, number], unit: string) {
+  return `${range[0]}${unit}–${range[1]}${unit}`;
+}
+function fmtIn(value: number | null | undefined) {
+  return value == null ? 'Data required' : `${value}"`;
+}
+
+const rows = [
+  { label: 'Tier', get: (m: (typeof sorted)[number]) => m.data.tier },
+  { label: 'Cut width', get: (m: (typeof sorted)[number]) => fmtRange(m.data.specs.cutWidthFt, "'") },
+  { label: 'Cut length', get: (m: (typeof sorted)[number]) => fmtRange(m.data.specs.cutLengthFt, "'") },
+  { label: 'Traverse speed', get: (m: (typeof sorted)[number]) => fmtRange(m.data.specs.traverseSpeedIpm, ' IPM') },
+  { label: 'Plasma — mild steel', get: (m: (typeof sorted)[number]) => fmtIn(m.data.specs.plasmaMildSteelIn) },
+  { label: 'Plasma — aluminum / stainless', get: (m: (typeof sorted)[number]) => fmtIn(m.data.specs.plasmaAluminumStainlessIn) },
+  { label: 'Oxy-fuel capacity', get: (m: (typeof sorted)[number]) => fmtIn(m.data.specs.oxyFuelIn) },
+];
+---
+
+<Layout
+  title="Compare Machines"
+  description="Side-by-side spec comparison across all 7 Sector Technology CNC cutting machine lines — cut width, length, speed, and cutting capacity."
+>
+  <section class="border-b border-brand-steel-200 bg-brand-steel-100">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-extrabold tracking-tight text-brand-navy-950">Compare Machines</h1>
+      <p class="mt-4 max-w-2xl text-lg leading-relaxed text-brand-steel-700">
+        Every current spec, side by side across all 7 machine lines. Where a figure isn't published
+        for a given model, it's marked "Data required" rather than estimated.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="overflow-x-auto rounded-lg border border-brand-steel-200">
+      <table class="min-w-full border-collapse text-left text-sm">
+        <thead>
+          <tr class="bg-brand-navy-900 text-white">
+            <th scope="col" class="sticky left-0 z-10 bg-brand-navy-900 px-4 py-3 font-semibold">Spec</th>
+            {sorted.map((m) => (
+              <th scope="col" class="whitespace-nowrap px-4 py-3 font-semibold">
+                <a href={`/machines/${m.data.urlSlug}/`} class="hover:underline">{m.data.name}</a>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, i) => (
+            <tr class:list={[i % 2 === 0 ? 'bg-white' : 'bg-brand-steel-100']}>
+              <th scope="row" class="sticky left-0 z-10 bg-inherit px-4 py-3 font-medium text-brand-navy-950">
+                {row.label}
+              </th>
+              {sorted.map((m) => {
+                const value = row.get(m);
+                return (
+                  <td class="whitespace-nowrap px-4 py-3 text-brand-steel-700">
+                    {value === 'Data required' ? (
+                      <span class="font-medium text-brand-amber-600">Data required</span>
+                    ) : (
+                      value
+                    )}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 text-sm text-brand-steel-700">
+      Need a fuller spec sheet — standard/optional equipment, process capacity, or drilling capacity?
+      Open any machine's page from the column header above.
+    </p>
+  </section>
+</Layout>

@@ -1,0 +1,57 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import ContactStrip from '../../../components/ContactStrip.astro';
+import CtaBand from '../../../components/CtaBand.astro';
+---
+
+<Layout
+  title="Technical Service"
+  description="Sector Technology supports its products in the field with certified OEM service for Hypertherm, ITT CMC-Kaliburn, Thermadyne, and Bosch Rexroth, plus phone support, field service, and online diagnostics."
+>
+  <PageHero
+    eyebrow="Services"
+    title="Technical Service"
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'Services' }, { label: 'Technical Service' }]}
+    intro="We believe in supporting our products once they're installed out in the field."
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <p class="text-base leading-relaxed text-brand-steel-700">
+          Sector Technology Inc. believes in supporting our products once they are installed out in
+          the field. We are a certified OEM for Hypertherm®, ITT CMC-Kaliburn®, Thermadyne®, and
+          Bosch Rexroth®, which allows us to provide stellar product support.
+        </p>
+        <p class="mt-6 text-base leading-relaxed text-brand-steel-700">
+          We have experienced service engineers who provide both phone support and field service.
+          Feel free to call to speak with a service engineer, or send an email to request technical
+          support. If your machine and facility are set up for it, we can also provide online
+          diagnostics for your machine.
+        </p>
+        <h2 class="mt-10 text-xl font-bold text-brand-navy-950">Related</h2>
+        <ul class="mt-4 flex flex-wrap gap-3 text-sm">
+          <li><a href="/services/training/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Training</a></li>
+          <li><a href="/services/spare-parts/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Spare Parts</a></li>
+          <li><a href="/services/retrofits/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Retrofits</a></li>
+        </ul>
+      </div>
+      <aside>
+        <div class="rounded-lg border border-brand-steel-200 bg-brand-steel-100 p-6">
+          <h2 class="text-sm font-semibold uppercase tracking-wide text-brand-steel-700">Reach a service engineer</h2>
+          <div class="mt-3">
+            <ContactStrip email="support@sectortechnologyinc.com" label="Email" />
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Need field service or phone support?"
+    body="Reach out and a service engineer will get back to you."
+    ctaLabel="Contact Us"
+    ctaHref="/contact/"
+  />
+</Layout>

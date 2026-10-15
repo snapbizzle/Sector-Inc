@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sectortechnologyinc.com/sitemap-index.xml

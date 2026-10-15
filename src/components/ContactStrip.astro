@@ -1,0 +1,20 @@
+---
+interface Props {
+  /** Which department email to show. Defaults to sales. */
+  email?: string;
+  label?: string;
+}
+const { email = 'sales@sectortechnologyinc.com', label = 'Email' } = Astro.props;
+---
+
+<address class="not-italic">
+  <p class="font-semibold text-brand-navy-950">Sector Technology Inc.</p>
+  <p class="mt-1 text-brand-steel-700">2000 Elizabeth St, Nicholasville, KY 40356</p>
+  <p class="mt-1 text-brand-steel-700">
+    Tel: <a href="tel:+18598818113" class="text-brand-blue-500 hover:underline">(859) 881-8113</a>
+    &nbsp;·&nbsp; Fax: (859) 881-8114
+  </p>
+  <p class="mt-1 text-brand-steel-700">
+    {label}: <a href={`mailto:${email}`} class="text-brand-blue-500 hover:underline">{email}</a>
+  </p>
+</address>

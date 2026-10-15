@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  machine: CollectionEntry<'machines'>;
+}
+
+const { machine } = Astro.props;
+const { name, urlSlug, tier, tagline, heroImage, heroImageAlt } = machine.data;
+---
+
+<a
+  href={`/machines/${urlSlug}/`}
+  class="group flex flex-col overflow-hidden rounded-lg border border-brand-steel-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+>
+  <div class="aspect-[4/3] overflow-hidden bg-brand-steel-100">
+    <img
+      src={heroImage}
+      alt={heroImageAlt}
+      width="640"
+      height="480"
+      loading="lazy"
+      class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+    />
+  </div>
+  <div class="flex flex-1 flex-col gap-2 p-5">
+    <span class="text-xs font-semibold uppercase tracking-wide text-brand-blue-500">{tier}</span>
+    <h3 class="text-lg font-bold text-brand-navy-950">{name}</h3>
+    <p class="flex-1 text-sm leading-relaxed text-brand-steel-700">{tagline}</p>
+    <span class="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue-500">
+      View specs
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </span>
+  </div>
+</a>

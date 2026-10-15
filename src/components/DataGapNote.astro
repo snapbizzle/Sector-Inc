@@ -1,0 +1,20 @@
+---
+interface Props {
+  notes: string[];
+}
+const { notes } = Astro.props;
+---
+
+{notes.length > 0 && (
+  <div class="rounded-lg border border-brand-amber-500/40 bg-amber-50 p-5" role="note">
+    <p class="flex items-center gap-2 text-sm font-semibold text-brand-amber-600">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 9v4m0 4h.01M10.29 3.86l-8.18 14.17A1 1 0 003 19.5h18a1 1 0 00.87-1.47L13.71 3.86a1 1 0 00-1.72 0z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      Needs your confirmation
+    </p>
+    <ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-brand-steel-700">
+      {notes.map((note) => <li>{note}</li>)}
+    </ul>
+  </div>
+)}

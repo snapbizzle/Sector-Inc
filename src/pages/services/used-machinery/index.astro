@@ -1,0 +1,50 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import ContactStrip from '../../../components/ContactStrip.astro';
+import CtaBand from '../../../components/CtaBand.astro';
+---
+
+<Layout
+  title="Used Machinery & Components"
+  description="Sector Technology occasionally has used machinery and components available from retrofits and trade-ins — contact us for current availability."
+>
+  <PageHero
+    eyebrow="Services"
+    title="Used Machinery &amp; Components"
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'Services' }, { label: 'Used Machinery' }]}
+    intro="An inexpensive upgrade, or a hard-to-find replacement part, may already be sitting on our floor."
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <p class="text-base leading-relaxed text-brand-steel-700">
+          Due to the nature of retrofits and trade-ins, we sometimes have used machinery and
+          components available. Current availability changes frequently, so rather than publish a
+          list that can go stale, contact us directly and we'll tell you what's on the floor right
+          now. This can be a great opportunity for an inexpensive upgrade or a discontinued
+          replacement part. Items are generally sold as-is.
+        </p>
+        <h2 class="mt-10 text-xl font-bold text-brand-navy-950">Related</h2>
+        <ul class="mt-4 flex flex-wrap gap-3 text-sm">
+          <li><a href="/services/trade-ins/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Trade-Ins</a></li>
+          <li><a href="/services/spare-parts/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Spare Parts</a></li>
+        </ul>
+      </div>
+      <aside>
+        <div class="rounded-lg border border-brand-steel-200 bg-brand-steel-100 p-6">
+          <h2 class="text-sm font-semibold uppercase tracking-wide text-brand-steel-700">Check availability</h2>
+          <div class="mt-3">
+            <ContactStrip email="sales@sectortechnologyinc.com" label="Email" />
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Looking for a used machine or part?"
+    body="Contact us and we'll tell you what's currently available."
+  />
+</Layout>

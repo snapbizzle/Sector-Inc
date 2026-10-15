@@ -1,0 +1,38 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CtaBand from '../../../components/CtaBand.astro';
+---
+
+<Layout
+  title="Controls"
+  description="Advanced PC-based CNC controls from Sector Technology — certified OEM for Hypertherm Automation and ITT Burny, for new machines and retrofits."
+>
+  <PageHero
+    eyebrow="Products"
+    title="Controls"
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'Products' }, { label: 'Controls' }]}
+    intro="Advanced, PC-based CNC controls for new machines and retrofits alike."
+  />
+
+  <section class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <p class="text-base leading-relaxed text-brand-steel-700">
+      Sector Technology provides multiple advanced, PC-based CNC controls. We are a certified OEM
+      for both Hypertherm Automation® and ITT Burny®. Either control can be supplied on a new
+      machine depending on the customer's request, and both can also be supplied for retrofits of
+      older equipment.
+    </p>
+
+    <h2 class="mt-10 text-xl font-bold text-brand-navy-950">Related</h2>
+    <ul class="mt-4 flex flex-wrap gap-3 text-sm">
+      <li><a href="/products/plasma-systems/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Plasma Systems</a></li>
+      <li><a href="/services/retrofits/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Retrofits</a></li>
+      <li><a href="/machines/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">See our machines</a></li>
+    </ul>
+  </section>
+
+  <CtaBand
+    title="Upgrading an older machine's control?"
+    body="Ask us about a Hypertherm Automation or ITT Burny control retrofit for your gantry."
+  />
+</Layout>

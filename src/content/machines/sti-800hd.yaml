@@ -1,0 +1,77 @@
+name: STI-800HD
+urlSlug: sti-800hd
+tier: Heavy-Duty Dual-Beam Combination
+tagline: A heavy-duty dual-beam combination machine for shipbuilders and bridge builders who need multiple processes on one large part.
+overview: >-
+  The STI-800HD is a heavy-duty, dual-beam combination machine, ideal for a manufacturer that wants
+  to consolidate part processing onto one machine. It's designed to provide both precision and heft
+  within a large machine envelope — perfect for shipbuilders and bridge builders who need to
+  perform multiple processes on large parts. It's equipped with an advanced PC-based CNC control
+  that provides an excellent motion control system, built around the High Definition Plasma Cutting
+  process for ease of use, with fully automated process control for both oxy-fuel and plasma
+  cutting. This versatile machine can run multiple processes, including plasma, oxy-fuel, plasma
+  scribing, drilling processes (drilling, tapping, reaming, counterboring, countersinking), and
+  contour bevel cutting.
+heroImage: /images/machines/sti-800hd.jpg
+heroImageAlt: Sector Technology STI-800HD twin-bridge dual-beam CNC combination cutting and drilling gantry.
+
+specs:
+  cutWidthFt: [8, 40]
+  cutLengthFt: [30, 300]
+  contouringSpeedIpm: [1, 500]
+  traverseSpeedIpm: [1, 1000]
+  lifterSpeedPlasmaIpm: 1000
+  lifterSpeedOxyFuelIpm: 70
+  plasmaMildSteelIn: 6
+  plasmaAluminumStainlessIn: 6
+  oxyFuelIn: 30
+
+capacitySectionLabel: Process Capacity
+capacityNotes:
+  - label: Plasma
+    value: Up to 4
+  - label: Oxy-Fuel
+    value: Up to 24
+  - label: Drilling
+    value: Up to 2 (40 hp stations)
+
+drillingCapacity:
+  drillingIn: 4
+  counterboringIn: 4
+  countersinkingIn: 4
+
+standardEquipment:
+  - Twin-bridge dual side gantry, high-power Bosch Rexroth 3,500-watt AC brushless drives
+  - Floor-mounted 30 lbs./ft. machined rails, adjustable leveling pads, dual drive, digital synchronization
+  - Hypertherm® EDGE Pro® numerical control
+  - 19-inch active matrix LCD touch screen, USB communication port
+  - Power track guide and heat shields to protect hoses and cables from wear and sparks
+  - Non-contact electronic proximity switches
+  - Helical rack & pinion drive with precision planetary gear box
+  - 18 homing positions and procedures to square gantry during setup
+  - Air-blast and wiper system to clean rails
+  - 2-inch stainless steel drive band for slave or mirror-image cutting
+  - Water table control at the operator console
+  - Three-part automotive paint finish
+
+optionalEquipment:
+  - 10, 15, or 20 hp drilling station integrated with PLC
+  - 12-station tool changer
+  - 5-axis Rotobevel contour beveling station
+  - X & Y axis plasma arc bevel station
+  - Triple-torch rotary oxy-fuel bevel station
+  - Laser pointer for plate alignment
+  - Hose reel with hand torch for hand cutting
+  - Precision micrometer-scaled oxygen piercing valve for oxy-fuel systems
+  - Heavy-duty water or downdraft tables
+  - Floor-mounted or overhead power track
+  - Rider console with cushioned seat
+  - Tucked rail for forklift access
+  - Wireless networking for CNC controller
+  - Plasma torch collision sensor with plasma systems
+  - Easy-clean water table or zoned downdraft
+  - Precision-machined linear profile rails
+  - Automated gas control console
+
+dataGaps:
+  - "Oxy-fuel capacity (30 inches) and drilling capacity (4-inch diameter) both substantially exceed named 2026 competitors in the drill/plasma combination-machine category (which typically cap drilling around 2.75–3 inches). Please confirm these reflect current production capability before they're featured as headline differentiators on the new site."

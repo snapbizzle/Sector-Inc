@@ -1,0 +1,49 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import ContactStrip from '../../../components/ContactStrip.astro';
+import CtaBand from '../../../components/CtaBand.astro';
+---
+
+<Layout
+  title="Trade-Ins"
+  description="Sector Technology accepts older machines on trade-in toward a new machine purchase, or helps you find a buyer through our industry contacts."
+>
+  <PageHero
+    eyebrow="Services"
+    title="Trade-Ins"
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'Services' }, { label: 'Trade-Ins' }]}
+    intro="Have an older machine? We'll help you turn it into credit on a new one."
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <p class="text-base leading-relaxed text-brand-steel-700">
+          From time to time, customers have an older machine that Sector is willing to take back on
+          a trade-in when they buy a new machine from us. Sector will either give a trade-in credit
+          toward the price of a new machine, or we'll help you find a buyer for your used machine
+          through our industry contacts.
+        </p>
+        <h2 class="mt-10 text-xl font-bold text-brand-navy-950">Related</h2>
+        <ul class="mt-4 flex flex-wrap gap-3 text-sm">
+          <li><a href="/services/used-machinery/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Used Machinery</a></li>
+          <li><a href="/machines/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">See our machines</a></li>
+        </ul>
+      </div>
+      <aside>
+        <div class="rounded-lg border border-brand-steel-200 bg-brand-steel-100 p-6">
+          <h2 class="text-sm font-semibold uppercase tracking-wide text-brand-steel-700">Discuss a trade-in</h2>
+          <div class="mt-3">
+            <ContactStrip email="sales@sectortechnologyinc.com" label="Email" />
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Ready to trade in your old machine?"
+    body="Tell us about your current machine and what you're looking to upgrade to."
+  />
+</Layout>

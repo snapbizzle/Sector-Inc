@@ -1,0 +1,71 @@
+name: STI-100HD
+urlSlug: sti-100hd
+tier: Ultra Heavy-Duty / High-Volume
+tagline: An ultra heavy-duty precision gantry for high-volume production, wide enough to straddle two 10-foot plates.
+overview: >-
+  The STI-100HD is an ultra heavy-duty precision gantry that supports multiple-torch cutting of
+  thick material. It's ideal for a large manufacturer or steel service center that requires
+  high-volume production, with a beam large enough to straddle two 10-foot-wide plates. It's
+  equipped with an advanced PC-based CNC control that provides an excellent motion control system,
+  built around the High Definition Plasma Cutting process for ease of use, with fully automated
+  process control for both oxy-fuel and plasma cutting. This versatile machine can run multiple
+  processes, including plasma, oxy-fuel, plasma scribing, drilling, and contour bevel cutting.
+heroImage: /images/machines/sti-100hd.jpg
+heroImageAlt: Sector Technology STI-100HD ultra heavy-duty CNC gantry, wide enough to straddle two ten-foot plates.
+
+specs:
+  cutWidthFt: [12, 40]
+  cutLengthFt: [30, 300]
+  contouringSpeedIpm: [1, 500]
+  traverseSpeedIpm: [1, 1000]
+  lifterSpeedPlasmaIpm: 1000
+  lifterSpeedOxyFuelIpm: 70
+  plasmaMildSteelIn: 6
+  plasmaAluminumStainlessIn: 6
+  oxyFuelIn: 30
+
+capacitySectionLabel: Process Capacity
+capacityNotes:
+  - label: Plasma
+    value: Up to 4
+  - label: Oxy-Fuel
+    value: Up to 24
+
+standardEquipment:
+  - Dual side-drive gantry, high-power 2,500–4,000-watt Bosch Rexroth AC brushless drives
+  - Floor-mounted 30 lbs./ft. machined rails, adjustable leveling pads, dual drive, digital synchronization
+  - Hypertherm® EDGE Pro® numerical control
+  - 19-inch active matrix LCD touch screen, USB communication port
+  - Power track guide and heat shields to protect hoses and cables from wear and sparks
+  - Non-contact electronic proximity switches
+  - Rack & pinion drive with precision planetary gear box
+  - 18 homing positions and procedures to square gantry during setup
+  - Air-blast and wiper system to clean rails
+  - 2-inch stainless steel drive band for slave or mirror-image cutting
+  - Water table control at the operator console
+  - Three-part automotive paint finish
+
+optionalEquipment:
+  - True Hole technology
+  - 10, 15, or 20 hp drilling station integrated with PLC
+  - 12-station tool changer
+  - 5-axis Rotobevel contour beveling station
+  - X & Y axis plasma arc bevel station
+  - Triple-torch rotary oxy-fuel bevel station
+  - Laser pointer for plate alignment
+  - Hose reel with hand torch for hand cutting
+  - Plasma torch collision sensor
+  - Precision micrometer-scaled oxygen piercing valve for oxy-fuel systems
+  - Plasma, pneumatic, or paint marking
+  - Heavy-duty water or downdraft tables
+  - Floor-mounted or overhead power track
+  - Rider console with cushioned seat
+  - Tucked rail for forklift access
+  - Wireless networking for CNC controller
+  - Adjustable oxy-fuel torches to allow beveling
+  - Easy-clean water table or zoned downdraft
+  - Precision-machined linear profile rails
+  - Automated gas control console
+
+dataGaps:
+  - "Oxy-fuel capacity is published at 30 inches — substantially larger than any named 2026 competitor found in research (which typically top out around 4–6 inches for multi-torch straight cutting). Sector's own Oxy-Fuel process page states the company has \"over 40 years of experience... including helping to develop the process of cutting over 30 inch material,\" which supports this as a genuine, long-standing capability rather than a typo — but please confirm it reflects current production capability before it's featured as a headline differentiator."

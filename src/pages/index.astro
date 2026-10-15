@@ -1,0 +1,146 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import MachineCard from '../components/MachineCard.astro';
+
+const machines = await getCollection('machines');
+const order = ['photon', 'gamma', 'spectrum', 'sti-550hd', 'sti-200hd', 'sti-100hd', 'sti-800hd'];
+const sorted = machines.sort((a, b) => order.indexOf(a.data.urlSlug) - order.indexOf(b.data.urlSlug));
+const featured = sorted.filter((m) => ['photon', 'spectrum', 'sti-200hd', 'sti-800hd'].includes(m.data.urlSlug));
+---
+
+<Layout
+  title="Sector Technology Inc."
+  description="Sector Technology designs and builds CNC plasma and oxy-fuel cutting machines, controls, and retrofits for fabricators and manufacturers across North America, Europe, and the Pacific Rim."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-brand-navy-950 text-white">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-24 lg:px-8">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wide text-brand-blue-300">
+          CNC Plasma &amp; Oxy-Fuel Cutting Machines
+        </p>
+        <h1 class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">
+          The right diversity and versatility to keep your business competitive.
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-brand-steel-200">
+          Sector Technology is devoted solely to serving the needs of the machine-cutting industry.
+          From competent technical advice to practical, hands-on assistance, we help our customers
+          increase productivity and reduce cost — from the simplest to the most advanced cutting
+          machines, customized to your needs.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/machines/"
+            class="inline-flex items-center rounded-md bg-brand-amber-500 px-6 py-3 text-sm font-semibold text-brand-navy-950 shadow-sm hover:bg-brand-amber-600"
+          >
+            Browse Machines
+          </a>
+          <a
+            href="/quote/"
+            class="inline-flex items-center rounded-md border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
+          >
+            Request a Quote
+          </a>
+        </div>
+        <p class="mt-8 text-sm font-semibold uppercase tracking-wide text-brand-blue-300">
+          Price, performance, and precision — the future in cutting technology.
+        </p>
+      </div>
+      <div class="overflow-hidden rounded-xl border border-white/10 shadow-xl">
+        <img
+          src="/images/machines/sti-200hd.jpg"
+          alt="Sector Technology STI-200HD heavy-duty CNC plasma and oxy-fuel cutting gantry on the shop floor"
+          width="1328" height="2256"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="border-b border-brand-steel-200 bg-brand-steel-100">
+    <div class="mx-auto grid max-w-7xl gap-6 px-4 py-8 text-center sm:px-6 sm:grid-cols-3 lg:px-8">
+      <div>
+        <p class="text-2xl font-extrabold text-brand-navy-950">1979</p>
+        <p class="mt-1 text-sm text-brand-steel-700">Serving the cutting industry since our Sector Canada founding</p>
+      </div>
+      <div>
+        <p class="text-2xl font-extrabold text-brand-navy-950">7</p>
+        <p class="mt-1 text-sm text-brand-steel-700">Machine lines, from entry-level to ultra heavy-duty</p>
+      </div>
+      <div>
+        <p class="text-2xl font-extrabold text-brand-navy-950">OEM</p>
+        <p class="mt-1 text-sm text-brand-steel-700">Certified for Hypertherm®, Bosch Rexroth®, and more</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured machines -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <h2 class="text-3xl font-extrabold tracking-tight text-brand-navy-950">Machines</h2>
+        <p class="mt-2 max-w-2xl text-base leading-relaxed text-brand-steel-700">
+          From a small fabricator's first automated table to ultra heavy-duty gantries for
+          shipbuilders — find the machine sized to your shop.
+        </p>
+      </div>
+      <a href="/machines/" class="text-sm font-semibold text-brand-blue-500 hover:underline">
+        View all 7 machines →
+      </a>
+    </div>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {featured.map((machine) => <MachineCard machine={machine} />)}
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section class="border-t border-brand-steel-200 bg-brand-steel-100">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold tracking-tight text-brand-navy-950">What We Do</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-3">
+        <a href="/processes/plasma/" class="rounded-lg border border-brand-steel-300 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-md">
+          <h3 class="font-bold text-brand-navy-950">Plasma Cutting</h3>
+          <p class="mt-2 text-sm leading-relaxed text-brand-steel-700">
+            High quality, high speed cutting of carbon steel, aluminum, copper, and stainless steel —
+            straight, linear bevel, and contour bevel.
+          </p>
+        </a>
+        <a href="/processes/oxy-fuel/" class="rounded-lg border border-brand-steel-300 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-md">
+          <h3 class="font-bold text-brand-navy-950">Oxy-Fuel Cutting</h3>
+          <p class="mt-2 text-sm leading-relaxed text-brand-steel-700">
+            Over 40 years of experience cutting thick carbon steel, including developing the process
+            for cutting material over 30 inches thick.
+          </p>
+        </a>
+        <a href="/services/retrofits/" class="rounded-lg border border-brand-steel-300 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-md">
+          <h3 class="font-bold text-brand-navy-950">Retrofits</h3>
+          <p class="mt-2 text-sm leading-relaxed text-brand-steel-700">
+            Update an existing machine for better productivity and reliability — from electronics
+            upgrades to a complete frame rebuild.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-start gap-6 rounded-2xl bg-brand-navy-900 px-8 py-12 text-white sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <h2 class="text-2xl font-extrabold">Ready to talk about your next machine?</h2>
+        <p class="mt-2 max-w-xl text-brand-steel-200">
+          Tell us what you're cutting and we'll help you find the right model, retrofit, or spare
+          part.
+        </p>
+      </div>
+      <a
+        href="/quote/"
+        class="inline-flex shrink-0 items-center rounded-md bg-brand-amber-500 px-6 py-3 text-sm font-semibold text-brand-navy-950 shadow-sm hover:bg-brand-amber-600"
+      >
+        Request a Quote
+      </a>
+    </div>
+  </section>
+</Layout>

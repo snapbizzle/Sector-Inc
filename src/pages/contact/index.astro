@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import ContactStrip from '../../components/ContactStrip.astro';
+---
+
+<Layout
+  title="Contact"
+  description="Contact Sector Technology Inc. in Nicholasville, Kentucky — sales, support, and general inquiries."
+>
+  <PageHero
+    eyebrow="Contact"
+    title="Contact Us"
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'Contact' }]}
+    intro="We proudly stand behind every machine we build — questions or comments are always welcome."
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-10 sm:grid-cols-2">
+      <div class="rounded-lg border border-brand-steel-200 p-6">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-brand-steel-700">Sales &amp; General Inquiries</h2>
+        <div class="mt-3">
+          <ContactStrip email="sales@sectortechnologyinc.com" label="Email" />
+        </div>
+      </div>
+      <div class="rounded-lg border border-brand-steel-200 p-6">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-brand-steel-700">Technical Support</h2>
+        <div class="mt-3">
+          <ContactStrip email="support@sectortechnologyinc.com" label="Email" />
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 rounded-lg bg-brand-steel-100 p-6">
+      <p class="text-base leading-relaxed text-brand-steel-700">
+        Looking for pricing on a machine, retrofit, or part? Use our
+        <a href="/quote/" class="font-semibold text-brand-blue-500 hover:underline">quote request form</a>
+        and a member of our sales team will follow up directly.
+      </p>
+    </div>
+  </section>
+</Layout>

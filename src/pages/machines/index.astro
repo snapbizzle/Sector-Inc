@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import MachineCard from '../../components/MachineCard.astro';
+
+const machines = await getCollection('machines');
+// Sort by tier progression as presented on the original Machines page:
+// Photon, Gamma, Spectrum, 550HD, 200HD, 100HD, 800HD.
+const order = ['photon', 'gamma', 'spectrum', 'sti-550hd', 'sti-200hd', 'sti-100hd', 'sti-800hd'];
+const sorted = machines.sort((a, b) => order.indexOf(a.data.urlSlug) - order.indexOf(b.data.urlSlug));
+---
+
+<Layout
+  title="Machines"
+  description="Seven CNC plasma and oxy-fuel cutting machine lines from Sector Technology, from entry-level shop tables to ultra heavy-duty combination gantries."
+>
+  <section class="border-b border-brand-steel-200 bg-brand-steel-100">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-extrabold tracking-tight text-brand-navy-950">Machines</h1>
+      <p class="mt-4 max-w-2xl text-lg leading-relaxed text-brand-steel-700">
+        Seven gantry lines covering everything from a small fabrication shop's first automated table
+        to ultra heavy-duty, high-volume production gantries for shipbuilders and bridge builders.
+      </p>
+      <a href="/machines/compare/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue-500 hover:underline">
+        See the full spec comparison table across all 7 machines →
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {sorted.map((machine) => <MachineCard machine={machine} />)}
+    </div>
+  </section>
+</Layout>

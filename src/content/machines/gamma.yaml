@@ -1,0 +1,59 @@
+name: Gamma
+urlSlug: gamma
+tier: Light-Mid
+tagline: The Photon concept at larger scale, built for multi-shift cutting at a medium-sized manufacturer.
+overview: >-
+  The Gamma shares the same concept as the Photon, only on a larger scale. The design allows for
+  multiple-process cutting over multiple shifts, which is perfect for a medium-sized manufacturer
+  that relies on a lot of cutting. The Gamma is constructed of an ultra-large, rigid, honeycombed
+  lightweight aluminum beam with a dual side-driven gantry, and its cross-axis ways are composed of
+  Bosch Rexroth profile rails. It's equipped with an advanced PC-based CNC control that provides an
+  excellent motion control system, built around the High Definition Plasma Cutting process for ease
+  of use. The CNC includes fully automated process control for both oxy-fuel and plasma cutting.
+heroImage: /images/machines/gamma.jpg
+heroImageAlt: Sector Technology Gamma CNC plasma and oxy-fuel cutting gantry on Bosch Rexroth profile rails.
+
+specs:
+  cutWidthFt: [4, 8]
+  cutLengthFt: [4, 24]
+  contouringSpeedIpm: [1, 500]
+  traverseSpeedIpm: [1, 1000]
+  lifterSpeedPlasmaIpm: 800
+  lifterSpeedOxyFuelIpm: 70
+  plasmaMildSteelIn: 3.5
+  plasmaAluminumStainlessIn: 3
+  oxyFuelIn: 2
+
+capacitySectionLabel: Process Capacity
+capacityNotes:
+  - label: Plasma / Oxy-Fuel
+    value: 3 total
+
+standardEquipment:
+  - Dual side-drive gantry, high-power 650-watt AC brushless drive
+  - Aluminum reinforced extrusion, machined linear-way bridge beam, non-unitized frame
+  - Hypertherm® EDGE Pro® PC-based numerical control with USB ports
+  - Rack & pinion drive with precision planetary gear boxes
+  - 18 homing positions and procedures to square gantry during setup
+  - Wiper system for cleaning rails
+  - Smooth and accurate motion with bearings and multiple adjustments
+  - Elevated 20 lbs./ft. machined "T" rails with adjustable leveling pads
+  - 19-inch active matrix LCD touch screen
+  - Wireless networking for CNC controller
+  - Power track guide to protect hoses and cables
+  - Heat shields to protect cables and hoses from sparks
+  - Three-part automotive paint finish
+  - Job-loss recovery
+
+optionalEquipment:
+  - True Hole technology
+  - Laser pointer for plate alignment
+  - Hose reel with hand torch for hand cutting
+  - Plasma torch collision sensor for plasma system
+  - Precision micrometer-scaled piercing valve for oxy-fuel systems
+  - Plasma, pneumatic, or paint marking
+  - Medium-duty water table or downdraft tube
+  - Floor-mounted power track
+
+dataGaps:
+  - "Traverse speed is published at 1,000 IPM, the same as most of the line — a 2026 competitive review found at least one named competitor (Hornet Cutting Systems) publishing roughly double that at this size tier. Worth confirming this figure is still current for Gamma specifically."

@@ -1,0 +1,38 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CtaBand from '../../../components/CtaBand.astro';
+---
+
+<Layout
+  title="Plasma Systems"
+  description="Sector Technology is a certified OEM for Hypertherm Automation, ITT Burny, and Thermal Dynamics mechanized plasma systems, supplied on new machines and retrofits alike."
+>
+  <PageHero
+    eyebrow="Products"
+    title="Plasma Systems"
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'Products' }, { label: 'Plasma Systems' }]}
+    intro="Mechanized plasma systems from the brands fabricators already trust."
+  />
+
+  <section class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <p class="text-base leading-relaxed text-brand-steel-700">
+      Sector Technology provides multiple brands of mechanized plasma systems. We are a certified
+      OEM for Hypertherm Automation®, ITT Burny®, and Thermal Dynamics®. Any of these plasma
+      systems can be supplied on a new machine depending on the customer's request, and all of them
+      can also be supplied for retrofits of older equipment.
+    </p>
+
+    <h2 class="mt-10 text-xl font-bold text-brand-navy-950">Related</h2>
+    <ul class="mt-4 flex flex-wrap gap-3 text-sm">
+      <li><a href="/products/controls/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Controls</a></li>
+      <li><a href="/processes/plasma/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Plasma Cutting process</a></li>
+      <li><a href="/services/retrofits/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Retrofits</a></li>
+    </ul>
+  </section>
+
+  <CtaBand
+    title="Deciding between plasma systems?"
+    body="Tell us your material, thickness, and budget and we'll recommend the right system for a new machine or a retrofit."
+  />
+</Layout>

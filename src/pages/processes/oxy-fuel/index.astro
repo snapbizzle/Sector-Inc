@@ -1,0 +1,41 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CtaBand from '../../../components/CtaBand.astro';
+---
+
+<Layout
+  title="Oxy-Fuel Cutting"
+  description="Oxy-fuel cutting from Sector Technology — over 40 years of experience cutting thick carbon steel, including material over 30 inches thick, with Harris, Victor, and Oxweld torches."
+>
+  <PageHero
+    eyebrow="Processes"
+    title="Oxy-Fuel Cutting"
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'Processes' }, { label: 'Oxy-Fuel' }]}
+    intro="Decades of experience cutting thick carbon steel, including helping develop the process for cutting material over 30 inches thick."
+  />
+
+  <section class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <p class="text-base leading-relaxed text-brand-steel-700">
+      Although oxy-fuel cutting has been around for decades, it remains a very effective process for
+      cutting thick carbon steel. Sector Technology has over 40 years of experience with this
+      process, including helping to develop the technique for cutting material over 30 inches thick.
+    </p>
+    <p class="mt-6 text-base leading-relaxed text-brand-steel-700">
+      Sector Technology provides oxy-fuel with straight cutting, linear bevel cutting, and contour
+      bevel cutting. We equip our machines with cutting torches from Harris®, Victor®, and Oxweld®.
+    </p>
+
+    <h2 class="mt-10 text-xl font-bold text-brand-navy-950">Related</h2>
+    <ul class="mt-4 flex flex-wrap gap-3 text-sm">
+      <li><a href="/processes/plasma/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Plasma Cutting</a></li>
+      <li><a href="/processes/drilling/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">Drilling</a></li>
+      <li><a href="/machines/" class="rounded-md border border-brand-steel-300 px-4 py-2 font-semibold text-brand-navy-950 hover:bg-brand-steel-100">See our machines</a></li>
+    </ul>
+  </section>
+
+  <CtaBand
+    title="Cutting thick carbon steel?"
+    body="Ask us about oxy-fuel capacity on any Sector machine, including our heavy-duty gantry lines."
+  />
+</Layout>

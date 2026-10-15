@@ -1,0 +1,60 @@
+name: Photon
+urlSlug: photon
+tier: Entry-Level
+tagline: A high-quality entry-level machine for a small fabricator, or a shop cutting less than 8 hours a day.
+overview: >-
+  The Photon is a very high quality entry-level machine, ideal for a small fabricator or a company
+  that cuts less than 8 hours a day. It's constructed of a strong, rigid, honeycombed lightweight
+  aluminum beam with a dual side-driven gantry. The construction is robust enough to withstand the
+  daily wear and tear of heavy operation, and the cross-axis ways are made of hardened rails.
+  The Photon is equipped with an advanced PC-based CNC control that provides an excellent motion
+  control system, built around the High Definition Plasma Cutting process for ease of use. The CNC
+  includes fully automated process control for both oxy-fuel and plasma cutting.
+heroImage: /images/machines/photon.jpg
+heroImageAlt: Sector Technology Photon CNC plasma and oxy-fuel cutting gantry on a shop floor, with operator control console mounted on the bridge.
+
+specs:
+  cutWidthFt: [4, 6]
+  cutLengthFt: [4, 20]
+  contouringSpeedIpm: [1, 500]
+  traverseSpeedIpm: [1, 1000]
+  lifterSpeedPlasmaIpm: 800
+  lifterSpeedOxyFuelIpm: 70
+  plasmaMildSteelIn: 1.5
+  plasmaAluminumStainlessIn: 3
+  oxyFuelIn: 2
+
+capacitySectionLabel: Process Capacity
+capacityNotes:
+  - label: Plasma
+    value: Up to 1
+  - label: Oxy-Fuel
+    value: Up to 1
+
+standardEquipment:
+  - Dual side-drive gantry, high-power 320-watt AC brush drive
+  - Aluminum reinforced extrusion, machined linear-way bridge beam, non-unitized frame
+  - Hypertherm® EDGE Pro® numerical control with USB ports
+  - Rack & pinion drive with precision planetary gear boxes
+  - 18 homing positions and procedures to square gantry during setup
+  - Smooth and accurate motion with bearings and multiple adjustments
+  - Wiper system for cleaning rails
+  - Elevated 20 lbs./ft. machined "T" rails with adjustable leveling pads
+  - 19-inch active matrix LCD touch screen
+  - Wireless networking for CNC controller
+  - Power track guide to protect hoses and cables
+  - Heat shields to protect cables and hoses from sparks
+  - Three-part automotive paint finish
+  - Job-loss recovery
+
+optionalEquipment:
+  - Laser pointer for plate alignment
+  - Hose reel with hand torch for hand cutting
+  - Plasma torch collision sensor for plasma systems
+  - Precision micrometer-scaled piercing valve for oxy-fuel systems
+  - Plasma, pneumatic, or paint marking
+  - Medium-duty water table or downdraft
+  - Floor-mounted power track
+
+dataGaps:
+  - "Standard equipment lists a 320-watt AC brush drive, while every other model in the line lists an AC brushless drive at a higher wattage — confirm this is an intentional cost-reduced entry-level spec and not a legacy typo (carried over verbatim from the 2012 copy rather than silently changed)."

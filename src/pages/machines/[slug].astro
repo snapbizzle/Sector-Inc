@@ -1,0 +1,122 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import DataGapNote from '../../components/DataGapNote.astro';
+
+export async function getStaticPaths() {
+  const machines = await getCollection('machines');
+  return machines.map((machine) => ({
+    params: { slug: machine.data.urlSlug },
+    props: { machine },
+  }));
+}
+
+interface Props {
+  machine: CollectionEntry<'machines'>;
+}
+
+const { machine } = Astro.props;
+const { name, tier, tagline, overview, heroImage, heroImageAlt, standardEquipment, optionalEquipment, dataGaps, urlSlug } =
+  machine.data;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: `Sector Technology ${name}`,
+  description: tagline,
+  image: new URL(heroImage, Astro.site).toString(),
+  brand: { '@type': 'Brand', name: 'Sector Technology Inc.' },
+  category: tier,
+};
+---
+
+<Layout
+  title={name}
+  description={`${name} — ${tagline}`}
+  ogImage={heroImage}
+  structuredData={structuredData}
+>
+  <section class="border-b border-brand-steel-200 bg-brand-steel-100">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+      <div>
+        <nav aria-label="Breadcrumb" class="mb-4 text-sm text-brand-steel-700">
+          <a href="/machines/" class="hover:underline">Machines</a>
+          <span aria-hidden="true"> / </span>
+          <span class="text-brand-navy-950">{name}</span>
+        </nav>
+        <span class="text-xs font-semibold uppercase tracking-wide text-brand-blue-500">{tier}</span>
+        <h1 class="mt-2 text-4xl font-extrabold tracking-tight text-brand-navy-950">{name}</h1>
+        <p class="mt-4 text-lg leading-relaxed text-brand-steel-700">{tagline}</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a
+            href={`/quote/?machine=${urlSlug}`}
+            class="inline-flex items-center rounded-md bg-brand-amber-500 px-5 py-2.5 text-sm font-semibold text-brand-navy-950 shadow-sm hover:bg-brand-amber-600"
+          >
+            Request a Quote for the {name}
+          </a>
+          <a
+            href="/machines/compare/"
+            class="inline-flex items-center rounded-md border border-brand-navy-700 px-5 py-2.5 text-sm font-semibold text-brand-navy-950 hover:bg-white"
+          >
+            Compare all 7 machines
+          </a>
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-xl border border-brand-steel-300 shadow-sm">
+        <img src={heroImage} alt={heroImageAlt} width="850" height="567" class="h-full w-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <h2 class="text-2xl font-bold text-brand-navy-950">Overview</h2>
+        <p class="mt-4 max-w-3xl text-base leading-relaxed text-brand-steel-700">{overview}</p>
+
+        {dataGaps.length > 0 && (
+          <div class="mt-6">
+            <DataGapNote notes={dataGaps} />
+          </div>
+        )}
+
+        <h2 class="mt-12 text-2xl font-bold text-brand-navy-950">Standard Equipment</h2>
+        <ul class="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+          {standardEquipment.map((item) => (
+            <li class="flex gap-2 text-sm leading-relaxed text-brand-steel-700">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="mt-1 shrink-0 text-brand-blue-500" aria-hidden="true">
+                <path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <h2 class="mt-12 text-2xl font-bold text-brand-navy-950">Optional Equipment</h2>
+        <ul class="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+          {optionalEquipment.map((item) => (
+            <li class="flex gap-2 text-sm leading-relaxed text-brand-steel-700">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="mt-1 shrink-0 text-brand-steel-700" aria-hidden="true">
+                <circle cx="8" cy="8" r="3" fill="currentColor" />
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <aside class="lg:col-span-1">
+        <div class="sticky top-24">
+          <h2 class="text-xl font-bold text-brand-navy-950">Cutting Dimensions &amp; Speeds</h2>
+          <p class="mt-2 text-xs text-brand-steel-700">
+            Actual dimensions specified by the customer at order time.
+          </p>
+          <div class="mt-4">
+            <SpecTable machine={machine} />
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Layout>

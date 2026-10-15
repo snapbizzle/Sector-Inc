@@ -1,0 +1,172 @@
+---
+interface NavChild {
+  label: string;
+  href: string;
+}
+interface NavItem {
+  label: string;
+  href?: string;
+  children?: NavChild[];
+}
+
+const nav: NavItem[] = [
+  { label: 'Home', href: '/' },
+  {
+    label: 'Products',
+    children: [
+      { label: 'Machines', href: '/machines/' },
+      { label: 'Plasma Systems', href: '/products/plasma-systems/' },
+      { label: 'Controls', href: '/products/controls/' },
+    ],
+  },
+  {
+    label: 'Processes',
+    children: [
+      { label: 'Plasma', href: '/processes/plasma/' },
+      { label: 'Oxy-Fuel', href: '/processes/oxy-fuel/' },
+      { label: 'Drilling', href: '/processes/drilling/' },
+    ],
+  },
+  {
+    label: 'Services',
+    children: [
+      { label: 'Retrofits', href: '/services/retrofits/' },
+      { label: 'Technical Service', href: '/services/technical-service/' },
+      { label: 'Training', href: '/services/training/' },
+      { label: 'Spare Parts', href: '/services/spare-parts/' },
+      { label: 'Trade-Ins', href: '/services/trade-ins/' },
+      { label: 'Used Machinery', href: '/services/used-machinery/' },
+    ],
+  },
+  { label: 'Compare Machines', href: '/machines/compare/' },
+  { label: 'Partners', href: '/partners/' },
+  { label: 'About', href: '/about/' },
+];
+
+const currentPath = Astro.url.pathname;
+function isActive(href?: string) {
+  if (!href) return false;
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="sticky top-0 z-50 bg-brand-navy-900 text-white shadow-md">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+    <a href="/" class="flex items-center gap-3 shrink-0">
+      <img
+        src="/images/logo.jpg"
+        alt="Sector Technology Inc."
+        width="240"
+        height="39"
+        class="h-9 w-auto rounded-sm"
+      />
+      <span class="sr-only">Sector Technology Inc. — home</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav aria-label="Primary" class="hidden lg:block">
+      <ul class="flex items-center gap-1">
+        {nav.map((item) => (
+          <li class="group relative">
+            {item.children ? (
+              <>
+                <button
+                  type="button"
+                  class="flex items-center gap-1 rounded px-3 py-2 text-sm font-medium text-brand-steel-200 hover:bg-brand-navy-700 hover:text-white focus-visible:bg-brand-navy-700 aria-expanded:bg-brand-navy-700"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  {item.label}
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" class="opacity-70">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <ul class="invisible absolute left-0 top-full z-10 min-w-[220px] translate-y-1 rounded-md border border-brand-navy-700 bg-brand-navy-800 py-1 opacity-0 shadow-lg transition-all duration-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                  {item.children.map((child) => (
+                    <li>
+                      <a
+                        href={child.href}
+                        class="block px-4 py-2 text-sm text-brand-steel-200 hover:bg-brand-navy-700 hover:text-white"
+                      >
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <a
+                href={item.href}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                class:list={[
+                  'block rounded px-3 py-2 text-sm font-medium text-brand-steel-200 hover:bg-brand-navy-700 hover:text-white',
+                  { 'bg-brand-navy-700 text-white': isActive(item.href) },
+                ]}
+              >
+                {item.label}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="hidden shrink-0 lg:block">
+      <a
+        href="/quote/"
+        class="inline-flex items-center rounded-md bg-brand-amber-500 px-4 py-2 text-sm font-semibold text-brand-navy-950 shadow-sm hover:bg-brand-amber-600"
+      >
+        Request a Quote
+      </a>
+    </div>
+
+    <!-- Mobile menu toggle -->
+    <details class="lg:hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary
+        class="flex cursor-pointer list-none items-center justify-center rounded-md border border-brand-navy-700 p-2"
+        aria-label="Open menu"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </summary>
+      <nav aria-label="Primary" class="absolute inset-x-0 top-full max-h-[80vh] overflow-y-auto border-t border-brand-navy-700 bg-brand-navy-900 px-4 py-3">
+        <ul class="flex flex-col gap-1">
+          {nav.map((item) => (
+            <li>
+              {item.children ? (
+                <details class="group [&_summary::-webkit-details-marker]:hidden">
+                  <summary class="flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 text-sm font-medium text-brand-steel-200">
+                    {item.label}
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" class="transition-transform group-open:rotate-180">
+                      <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </summary>
+                  <ul class="ml-3 flex flex-col gap-0.5 border-l border-brand-navy-700 pl-3">
+                    {item.children.map((child) => (
+                      <li>
+                        <a href={child.href} class="block rounded px-3 py-2 text-sm text-brand-steel-300 hover:bg-brand-navy-700 hover:text-white">
+                          {child.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              ) : (
+                <a href={item.href} class="block rounded px-3 py-2 text-sm font-medium text-brand-steel-200 hover:bg-brand-navy-700 hover:text-white">
+                  {item.label}
+                </a>
+              )}
+            </li>
+          ))}
+          <li class="pt-2">
+            <a href="/quote/" class="block rounded-md bg-brand-amber-500 px-4 py-2 text-center text-sm font-semibold text-brand-navy-950">
+              Request a Quote
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>

@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+
+<Layout
+  title="About"
+  description="Sector Technology Inc. — Kentucky-based manufacturer of CNC plasma and oxy-fuel cutting machines, with roots in Sector Canada dating to 1979, serving North America, Europe, and the Pacific Rim."
+>
+  <PageHero
+    eyebrow="About"
+    title="About Sector Technology"
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]}
+    intro="Nearly five decades of cutting-machine experience, built on a reputation that now travels by word of mouth."
+  />
+
+  <section class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <p class="text-base leading-relaxed text-brand-steel-700">
+      Our Canadian affiliate, Sector Canada, has been in business since August 1979, when it was
+      established to provide repair services for all types of cutting machinery in the Canadian
+      market. In the 1980s, computer numerical control (CNC) systems revolutionized cutting
+      technology; Sector Canada gained a substantial market share in Canada and earned many large
+      contracts. Many of these customers wished to install Sector Canada's products in their US
+      manufacturing plants, prompting the establishment of Sector USA.
+    </p>
+    <p class="mt-6 text-base leading-relaxed text-brand-steel-700">
+      Since our establishment, we have expanded our products and services to include integrated
+      retrofit flame and plasma cutting machines, CNC controls, optical tracing systems, CAD/CAM
+      systems, complete turnkey cutting systems, special custom and welding machinery, abrasive
+      water-jet cutting machines, repair service, spare parts, installation, and technical support.
+      In addition, our machine shop facility provides design and building of specialty machines and
+      general machining.
+    </p>
+    <p class="mt-6 text-base leading-relaxed text-brand-steel-700">
+      Today, new customers approach us as a result of recommendations from our existing customers.
+      Our Kentucky facility, established in 1993, keeps us in a central location in the USA. In
+      addition to our North American market, we currently distribute in Europe and parts of the
+      Pacific Rim.
+    </p>
+  </section>
+
+  <CtaBand
+    title="Want to know more about Sector?"
+    body="Reach out with any question about our history, our machines, or our services."
+    ctaLabel="Contact Us"
+    ctaHref="/contact/"
+  />
+</Layout>
